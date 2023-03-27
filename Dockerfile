@@ -4,12 +4,12 @@ WORKDIR /
 
 COPY package.json ./
 COPY yarn.lock ./
-RUN yarn --version
-RUN yarn 
+COPY .yarn ./
+COPY node_modules ./
 
 COPY . .
 
-RUN yarn start
+RUN yarn build
 
 
 FROM nginx:1.23.0
