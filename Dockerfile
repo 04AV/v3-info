@@ -4,8 +4,8 @@ WORKDIR /
 
 COPY package.json ./
 COPY yarn.lock ./
-COPY .yarn ./
-COPY node_modules ./
+
+RUN yarn
 
 COPY . .
 
